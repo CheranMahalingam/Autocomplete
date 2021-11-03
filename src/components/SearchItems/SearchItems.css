@@ -1,0 +1,9 @@
+.match-box:hover {
+  background-color: #00fede;
+  padding: 0.3px;
+  cursor: pointer;
+}
+
+.match-items {
+  color: #ffffff;
+}

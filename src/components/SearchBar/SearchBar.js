@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import Fuse from "fuse.js";
 import SearchItems from "../SearchItems/SearchItems";
 import searchIcon from "../../images/search-icon.png";
@@ -47,14 +48,16 @@ function SearchBar(props) {
 
   return (
     <div className="search">
-      <input
-        className="search-box"
-        value={value || defaultValue}
-        onChange={handleNewSearch}
-      />
-      <span className="search-button" onClick={handleEnterCountry}>
-        <img className="search-icon" src={searchIcon} />
-      </span>
+      <div className="search-input">
+        <input
+          className="search-box"
+          value={value || defaultValue}
+          onChange={handleNewSearch}
+        />
+        <span className="search-button" onClick={handleEnterCountry}>
+          <img className="search-icon" src={searchIcon} alt="seach-icon" />
+        </span>
+      </div>
       <SearchItems
         fuzzyMatches={fuzzyMatches}
         handleCountrySelection={handleCountrySelection}
@@ -63,5 +66,13 @@ function SearchBar(props) {
     </div>
   );
 }
+
+SearchBar.propTypes = {
+  countries: PropTypes.array,
+  value: PropTypes.string,
+  defaultValue: PropTypes.string,
+  onChange: PropTypes.func,
+  maxResults: PropTypes.number,
+};
 
 export default SearchBar;

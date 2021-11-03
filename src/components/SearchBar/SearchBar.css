@@ -1,16 +1,20 @@
 .search {
   width: 500px;
-  height: 60px;
+  height: 50px;
   margin: 70px auto 0;
   background-color: #242628;
-  position: relative;
+}
+
+.search-input {
+  display: flex;
+  justify-content: right;
 }
 
 .search-button {
   width: 40px;
   height: 40px;
   border-radius: 40px;
-  position: relative;
+  position: absolute;
 }
 
 .search-box {
@@ -21,15 +25,14 @@
   font-size: 40px;
   color: #00fede;
   border: 2px solid #00fede;
+  position: relative;
+  padding-left: 15px;
 }
 
 .search-icon {
   width: 30px;
   height: 30px;
-  float: right;
-  position: absolute;
-  margin-top: 17px;
-  right: 20px;
+  margin-top: 10px;
   filter: invert(87%) sepia(100%) saturate(3278%) hue-rotate(89deg)
     brightness(102%) contrast(103%);
 }

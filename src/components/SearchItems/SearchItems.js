@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./SearchItems.css";
 
 function SearchItems(props) {
@@ -22,5 +23,11 @@ function SearchItems(props) {
     </>
   );
 }
+
+SearchItems.propTypes = {
+  fuzzyMatches: PropTypes.arrayOf(PropTypes.string),
+  handleCountrySelection: PropTypes.func,
+  onChange: PropTypes.func,
+};
 
 export default SearchItems;
